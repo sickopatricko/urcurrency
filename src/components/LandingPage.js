@@ -12,9 +12,10 @@ function LandingPage() {
       <button className="btn-checkout fade-up">
         <a href="#container">Convert</a>
         <svg
+          className="svg-arrow-rigth"
           fill="#000000"
-          height="20px"
-          width="20px"
+          height="17px"
+          width="17px"
           version="1.1"
           id="Layer_1"
           viewBox="0 0 330 330"

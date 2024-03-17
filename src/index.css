@@ -20,6 +20,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   background: hsla(204, 100%, 7%, 1);
@@ -151,10 +152,10 @@ button {
 .btn-checkout {
   display: flex;
   justify-content: center;
-  gap: 13px;
+  gap: 11px;
   font-family: var(--main-font);
   font-weight: 500;
-  font-size: 17px;
+  font-size: 18px;
   border-radius: 1rem;
 
   background: hsla(37, 98%, 53%, 1);
@@ -185,11 +186,17 @@ button {
   width: 200px;
 }
 
+.btn-checkout {
+  svg {
+    padding-top: 2px;
+  }
+}
+
 .btn-checkout:hover {
   svg {
     position: relative;
     top: 25%;
-    animation: pop-left 500ms forwards;
+    animation: pop-left 200ms forwards;
   }
 }
 
@@ -197,11 +204,8 @@ button {
   0% {
     left: 0;
   }
-  60% {
-    left: 10px;
-  }
   100% {
-    left: 0px;
+    left: 5px;
   }
 }
 
