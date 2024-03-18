@@ -22,6 +22,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
 body {
   background: hsla(204, 100%, 7%, 1);
 
@@ -253,6 +254,7 @@ button {
 }
 
 .window {
+  border-radius: 1rem;
   width: 100%;
   position: relative;
   height: 150px;
@@ -264,6 +266,9 @@ button {
 /* ACTIVE BUTTON */
 
 .window > button {
+  font-family: var(--main-font);
+  font-weight: 600;
+  border-radius: 1rem 0 0 0;
   color: #5c667b;
   background-color: var(--inactive-window-color);
   font-size: 17px;
@@ -272,6 +277,10 @@ button {
   width: 150px;
   cursor: pointer;
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 #active {
