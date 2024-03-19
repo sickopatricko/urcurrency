@@ -257,12 +257,15 @@ button {
   border-radius: 1rem;
   width: 100%;
   position: relative;
-  height: 150px;
+  height: 130px;
   display: flex;
   justify-content: flex-start;
   background-color: var(--inactive-window-color);
 }
 
+.window > img {
+  background-color: var(--inactive-window-color);
+}
 /* ACTIVE BUTTON */
 
 .window > button {
@@ -274,9 +277,9 @@ button {
   font-size: 17px;
   padding: 10px;
   border: 0;
-  width: 150px;
+  width: 180px;
   cursor: pointer;
-  height: 100px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
