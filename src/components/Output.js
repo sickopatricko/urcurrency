@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Output({ converted, toCurrency, fromCurrency }) {
+export default function Output({ converted, toCurrency, fromCurrency, value }) {
   const valueOfOne = 1;
   const [convertedToOne, setConvertedToOne] = useState(null);
   useEffect(() => {
@@ -15,6 +15,9 @@ export default function Output({ converted, toCurrency, fromCurrency }) {
   }, [fromCurrency, toCurrency, valueOfOne]);
   return (
     <>
+      <h3>
+        {value.toFixed(2)} {fromCurrency} =
+      </h3>
       <h2>
         {converted} {toCurrency}
       </h2>

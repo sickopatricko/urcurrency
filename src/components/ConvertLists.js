@@ -51,61 +51,65 @@ export default function ConvertLists() {
   return (
     <>
       <div className="form">
-        <label>
-          <span>Amount</span>
-          <input
-            type="text"
-            onChange={e => setValue(Number(e.target.value))}
-            value={value}
-            placeholder="enter some value..."
-          />
-        </label>
-        <label>
-          <span>From</span>
-          <select
-            value={fromCurrency}
-            onChange={e => setFromCurrency(e.target.value)}
-          >
-            <ConvertFrom
-              currencyNames={currencyNames}
-              fromCurrency={fromCurrency}
-              flags={flags}
+        <div className="inputs">
+          <label>
+            <span>Amount</span>
+            <input
+              type="text"
+              onChange={(e) => setValue(Number(e.target.value))}
+              value={value}
+              placeholder="enter some value..."
             />
-          </select>
-        </label>
+          </label>
+          <label>
+            <span>From</span>
+            <select
+              value={fromCurrency}
+              onChange={(e) => setFromCurrency(e.target.value)}
+            >
+              <ConvertFrom
+                currencyNames={currencyNames}
+                fromCurrency={fromCurrency}
+                flags={flags}
+              />
+            </select>
+          </label>
 
-        <ReverseButton
-          fromCurrency={fromCurrency}
-          toCurrency={toCurrency}
-          setFromCurrency={setFromCurrency}
-          setToCurrency={setToCurrency}
-        />
-
-        <label>
-          <span>To</span>
-          <select
-            value={toCurrency}
-            onChange={e => setToCurrency(e.target.value)}
-          >
-            <ConvertTo currencyNames={currencyNames} toCurrency={toCurrency} />
-          </select>
-        </label>
-      </div>
-
-      {value ? (
-        <div className="output">
-          <Output
-            converted={converted}
-            toCurrency={toCurrency}
-            value={value}
+          <ReverseButton
             fromCurrency={fromCurrency}
-            isLoading={isLoading}
-            setIsLoading={setIsLoading}
+            toCurrency={toCurrency}
+            setFromCurrency={setFromCurrency}
+            setToCurrency={setToCurrency}
           />
+
+          <label>
+            <span>To</span>
+            <select
+              value={toCurrency}
+              onChange={(e) => setToCurrency(e.target.value)}
+            >
+              <ConvertTo
+                currencyNames={currencyNames}
+                toCurrency={toCurrency}
+              />
+            </select>
+          </label>
         </div>
-      ) : (
-        ""
-      )}
+        <div className="output">
+          {value ? (
+            <Output
+              converted={converted}
+              toCurrency={toCurrency}
+              value={value}
+              fromCurrency={fromCurrency}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
     </>
   );
 }
